@@ -276,20 +276,6 @@ uint8_t ukf_init(tUKF *pUkf, tUkfMatrix *pUkfMatrix) {
 
     mtx_cpy(&pUkf->prev.Pxx_p, &pPar->Pxx0);  //init also P_m, Pxx
     mtx_cpy(&pUkf->prev.x_p, &pPar->x0);
-    /*mtx_cpy(&pUkf->update.Pyy, &pPar->Ryy0);
-    mtx_zeros(&pUkf->prev.X_p);//inti also X_m
-    mtx_zeros(&pUkf->prev.u_p); 
-    mtx_zeros(&pUkf->predict.y_m);
-    mtx_zeros(&pUkf->predict.Y_m);
-    mtx_zeros(&pUkf->update.Iyy);
-    mtx_zeros(&pUkf->update.K);
-    mtx_zeros(&pUkf->update.Kt);
-    mtx_zeros(&pUkf->update.Pxy);  
-    mtx_zeros(&pUkf->update.Pyy_cpy);
-    mtx_zeros(&pUkf->update.x_corr);
-    mtx_zeros(&pUkf->update.Pxx_corr);     
-    mtx_zeros(&pUkf->input.u);
-    mtx_zeros(&pUkf->input.y);*/
 
     return ukf_dimension_check(pUkf);
 }
