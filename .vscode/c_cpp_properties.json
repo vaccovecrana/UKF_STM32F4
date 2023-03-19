@@ -22,7 +22,8 @@
                 "-ffunction-sections",
                 "-fdata-sections"
             ],
-            "cStandard": "c11"
+            "cStandard": "c11",
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4
