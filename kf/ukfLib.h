@@ -45,7 +45,6 @@ typedef struct ukfMatrix {
     tPredictFcn* fcnPredict;
     tObservFcn* fcnObserve;
     float dT;
-
 } tUkfMatrix;
 
 typedef struct uKFpar {

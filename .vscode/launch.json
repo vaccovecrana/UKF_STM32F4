@@ -2,34 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug (Renode)",
-            "type": "cortex-debug",
+            "name": "kftest",
+            "type": "cppdbg",
             "request": "launch",
-            "servertype": "external",
+            "program": "${workspaceFolder}/kftest",
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "runToMain": true,
-            "executable": "${workspaceFolder}/build/renode-example.elf",
-            "device": "STM32F429ZIT6",
-            "gdbTarget": ":3333",
-            "svdFile": "${workspaceFolder}/stm32f429x.svd",
-            "armToolchainPath": "/usr/bin"
-        },
-        {
-            "name": "Debug (OpenOCD)",
-            "type": "cortex-debug",
-            "request": "launch",
-            "servertype": "openocd",
-            "cwd": "${workspaceFolder}",
-            "preLaunchTask": "build",
-            "runToMain": true,
-            "executable": "${workspaceFolder}/build/renode-example.elf",
-            "device": "STM32F429ZIT6",
-            "configFiles": [
-                "interface/stlink-v2.cfg",
-                "target/stm32f4x.cfg"
-            ],
-            "svdFile": "${workspaceFolder}/stm32f429x.svd",
-            "armToolchainPath": "/usr/bin"
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              },
+              {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+              }
+            ]
         }
     ]
 }
