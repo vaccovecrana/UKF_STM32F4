@@ -8,3 +8,5 @@ renode/
 *.srctrlprj
 *.srctrlbm
 *.srctrldb
+
+kftest
